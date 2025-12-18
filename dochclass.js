@@ -1,14 +1,13 @@
-class ServiceCart extends ShopCart
+import {ShopCart} from "./zad.js";
+export class ServiceCart extends ShopCart
 {
     CartType="A";
 constructor(itemlist, capacity, isstaffexclusive,carttype)
     {
-        this.ItemList=itemlist;
-        this.Capacity=capacity;
-        this.IsStaffExclusive=isstaffexclusive;
+        super(itemlist,capacity,isstaffexclusive)
         this.CartType=carttype;
     }
-    get CartType()
+get CartType()
 {
  return this.CartType;
 }
@@ -29,6 +28,7 @@ delete()
 }
 static clone()
 {
-    return ServiceCart(this.ItemList,this.Capacity,this.IsStaffExclusive,this.CartType);
+    return new ServiceCart(this.ItemList,this.Capacity,this.IsStaffExclusive,this.CartType);
 }
 }
+console.log("Success")

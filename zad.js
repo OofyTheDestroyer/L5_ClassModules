@@ -1,4 +1,4 @@
-class ShopCart
+export class ShopCart
 {
     ItemList="Milk, Soda";
     get ItemList()
@@ -43,11 +43,11 @@ delete()
 }
 copy()
 {
- return ShopCart(this.ItemList,this.Capacity,this.IsStaffExclusive);
+ return new ShopCart(this.ItemList,this.Capacity,this.IsStaffExclusive);
 }
 static clone()
 {
-    return ShopCart(this.ItemList,this.Capacity,this.IsStaffExclusive);
+    return new ShopCart(this.ItemList,this.Capacity,this.IsStaffExclusive);
 }
     #CapacityReached()
     {
@@ -72,9 +72,9 @@ static clone()
     }
     constructor(itemlist, capacity, isstaffexclusive)
     {
-        this.ItemList=itemlist
+        this.ItemList=itemlist;
         this.Capacity=capacity;
-        this.IsStaffExclusive=isstaffexclusive
+        this.IsStaffExclusive=isstaffexclusive;
     }
 }
 console.log("Success")
